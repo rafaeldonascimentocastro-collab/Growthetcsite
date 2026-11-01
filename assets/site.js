@@ -273,7 +273,7 @@
       return r.json().then(function (j) { return r.ok && j && (j.success === true || j.success === 'true'); }, function () { return false; });
     }, function () { clearTimeout(timer); return false; });
   }
-  var FRENTE_DESAFIO = { 'frente-inovacao': 'Estratégia que nunca sai do papel', 'frente-branding': 'Marca que não atrai o cliente certo', 'frente-social': 'Anúncios sem retorno', 'frente-seo': 'Invisível no Google e nas IAs', 'frente-vendas': 'Time comercial sem processo' };
+  var FRENTE_DESAFIO = { 'frente-inovacao': 'Estratégia que nunca sai do papel', 'frente-branding': 'Marca que não atrai o cliente certo', 'frente-marketing': 'Marketing que não trabalha junto', 'frente-social': 'Anúncios sem retorno', 'frente-seo': 'Invisível no Google e nas IAs', 'frente-vendas': 'Time comercial sem processo' };
   [].slice.call(d.querySelectorAll('form[data-lead]')).forEach(function (form) {
     var tipo = form.getAttribute('data-lead');
     var EP = form.getAttribute('data-endpoint') || CFG.leadEndpoint || '';
