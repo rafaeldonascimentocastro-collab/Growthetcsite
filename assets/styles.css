@@ -1094,16 +1094,11 @@ a.ccard:hover { border-color: var(--ink); }
 .post-grid.is-filtered .post-card.is-dup { display: block; }
 .post-card[hidden] { display: none !important; }
 .case-callout .link-arrow { color: var(--orange-lit, #F5A27A); }
-/* menu com 7 abas (Blog): no celular 4 + 3 em duas linhas; de 640 a 767 px "Cases" curto para caber numa linha */
+/* menu com 8 abas (Home + 7): no celular 4 + 4 em duas linhas; de 640 a 767 px "Cases" curto para caber numa linha */
 @media (max-width: 639.98px) {
   .nav a:not(.btn) { padding: 4px 3px; }
-  .nav a:not(.btn):nth-child(1) { flex-basis: calc((100% - 18px) * .23); }
-  .nav a:not(.btn):nth-child(2) { flex-basis: calc((100% - 18px) * .22); }
-  .nav a:not(.btn):nth-child(3) { flex-basis: calc((100% - 18px) * .26); }
-  .nav a:not(.btn):nth-child(4) { flex-basis: calc((100% - 18px) * .29); }
-  .nav a:not(.btn):nth-child(n) { margin-left: 0; }
-  .nav a:not(.btn):nth-child(2), .nav a:not(.btn):nth-child(3), .nav a:not(.btn):nth-child(4), .nav a:not(.btn):nth-child(6), .nav a:not(.btn):nth-child(7) { margin-left: 6px; }
-  .nav a:not(.btn):nth-child(n+5) { flex-basis: calc((100% - 12px) / 3); }
+  .nav a:not(.btn):nth-child(n) { flex-basis: calc((100% - 18px) / 4); margin-left: 0; }
+  .nav a:not(.btn):nth-child(4n+2), .nav a:not(.btn):nth-child(4n+3), .nav a:not(.btn):nth-child(4n+4) { margin-left: 6px; }
   .nav a.nav-hl::before { margin-right: 5px; }
 }
 @media (max-width: 389.98px) { .nav a:not(.btn) { font-size: .75rem; } .site-header .brand img { width: 132px; } .nav .nav-cta { padding: 0 12px; font-size: .75rem; } }
@@ -1162,3 +1157,6 @@ a.ccard:hover { border-color: var(--ink); }
 @media (min-width: 760px) { .grid--3 > .svc--cta:nth-child(7) { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 12px 32px; } .grid--3 > .svc--cta:nth-child(7) > p { flex: 1 1 20rem; } }
 .creator--nophoto { grid-template-columns: minmax(0, 1fr) !important; }
 .creator--nophoto .creator-copy p { max-width: 46rem; }
+.hero-badges { grid-area: badges; margin-top: 0; }
+.hero-grid { grid-template-areas: "badges badges" "title media" "lead lead" "cta cta" "note note" "also also"; }
+@media (min-width: 900px) { .hero-grid { grid-template-areas: "copy media"; } .hero-badges { grid-area: auto; } }
