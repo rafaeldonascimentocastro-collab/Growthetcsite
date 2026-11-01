@@ -1147,3 +1147,12 @@ a.ccard:hover { border-color: var(--ink); }
 .mk-proof h3 { font: 600 1rem/1.3 var(--f-body); }
 .mk-proof li > p:last-child { color: var(--mute); font-size: .9375rem; line-height: 1.55; }
 .pillar-art { width: 100%; height: auto; border-radius: 18px; }
+.mk-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.mk-badges li { display: inline-flex; align-items: center; min-height: 32px; padding: 0 14px; border-radius: 999px; border: 1px solid var(--line-lit); color: #E4EAEE; font-size: .875rem; font-weight: 600; }
+.mk-badges li:first-child, .mk-badges li:nth-child(2) { border-color: rgba(241, 127, 83, .55); color: var(--orange-lit); }
+.mk-senior-list { display: grid; gap: 16px; }
+@media (min-width: 860px) { .mk-senior-list { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; } }
+.mk-senior-list li { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 12px; padding: 22px; border-radius: 16px; background: var(--paper); }
+.mk-senior-list .i { color: var(--orange-ink); margin-top: .2em; }
+.mk-senior-list b { font: 500 1.1875rem/1.25 var(--f-display); }
+.mk-senior-list p { color: var(--mute); font-size: .9375rem; line-height: 1.55; margin-top: 6px; }
