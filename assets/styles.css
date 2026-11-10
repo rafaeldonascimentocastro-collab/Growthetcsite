@@ -1160,3 +1160,47 @@ a.ccard:hover { border-color: var(--ink); }
 .hero-badges { grid-area: badges; margin-top: 0; }
 .hero-grid { grid-template-areas: "badges badges" "title media" "lead lead" "cta cta" "note note" "also also"; }
 @media (min-width: 900px) { .hero-grid { grid-template-areas: "copy media"; } .hero-badges { grid-area: auto; } }
+
+/* ---------- carrossel de serviços no topo da Home ---------- */
+.hero-car { position: relative; isolation: isolate; background: #15232C; }
+.hc-track { position: absolute; inset: 0; }
+.hc-slide { position: absolute; inset: 0; display: flex; flex-direction: column; color: #fff; text-decoration: none; opacity: 0; visibility: hidden; transition: opacity .7s var(--ease), visibility 0s .7s; }
+.hc-slide.is-on { opacity: 1; visibility: visible; transition: opacity .7s var(--ease), visibility 0s; z-index: 1; }
+.hero-media.hero-car img { flex: 1 1 auto; min-height: 0; width: 100%; height: auto; object-fit: cover; object-position: 50% 45%; transform: scale(1.05); transition: transform 6s linear; }
+.hc-slide.is-on img { transform: scale(1); }
+.hero-media.hero-car img.hc-fit { object-fit: contain; background: linear-gradient(135deg, #182933, #213643 65%, #4A3329); }
+.hc-cap { flex: none; display: flex; flex-direction: column; gap: 2px; padding: 8px 10px 26px; background: #15232C; }
+.hc-cap small { display: none; }
+.hc-cap b { font: 400 .875rem/1.15 var(--f-display); letter-spacing: -.01em; }
+.hc-cap b .i { display: none; }
+.hc-cap > span { display: none; }
+.hc-ctrl { position: absolute; left: 0; right: 0; bottom: 4px; z-index: 2; display: flex; align-items: center; justify-content: center; }
+.hc-btn { display: none; }
+.hc-dots { display: flex; }
+.hc-dot { width: 14px; height: 20px; padding: 0; border: 0; background: none; cursor: pointer; display: grid; place-items: center; }
+.hc-dot::before { content: ""; width: 5px; height: 5px; border-radius: 99px; background: rgba(255, 255, 255, .4); transition: width .3s var(--ease), background .3s; }
+.hc-dot[aria-current="true"]::before { width: 12px; background: var(--orange); }
+.hc-dot:focus-visible, .hc-btn:focus-visible { outline: 2px solid #fff; outline-offset: 1px; border-radius: 99px; }
+@media (min-width: 900px) {
+  .hc-cap { gap: 4px; padding: 18px 24px 68px; border-top: 1px solid rgba(255, 255, 255, .08); }
+  .hc-cap small { display: block; font: 600 .6875rem/1.2 var(--f-body); letter-spacing: .14em; text-transform: uppercase; color: var(--orange); }
+  .hc-cap b { display: inline-flex; align-items: center; gap: .4em; font-size: clamp(1.25rem, 1.8vw, 1.5rem); }
+  .hc-cap b .i { display: inline-block; width: .8em; height: .8em; stroke: var(--orange); fill: none; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; transition: transform .25s var(--ease); }
+  .hc-slide:hover .hc-cap b .i, .hc-slide:focus-visible .hc-cap b .i { transform: translateX(4px); }
+  .hc-cap > span { display: block; color: #C3CDD3; font-size: .9375rem; line-height: 1.4; }
+  .hc-slide:focus-visible { outline: 3px solid var(--orange); outline-offset: -3px; border-radius: 22px; }
+  .hc-ctrl { left: 18px; right: 18px; bottom: 16px; justify-content: flex-start; gap: 4px; }
+  .hc-btn { display: grid; place-items: center; width: 34px; height: 34px; padding: 0; border: 1px solid rgba(255, 255, 255, .25); border-radius: 99px; background: transparent; color: #fff; cursor: pointer; transition: background .2s, border-color .2s; }
+  .hc-btn:hover { background: rgba(255, 255, 255, .12); border-color: #fff; }
+  .hc-btn svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .hc-play { margin-left: auto; }
+  .hc-play .hc-ico-play { display: none; fill: currentColor; stroke: none; }
+  .hc-play[aria-pressed="true"] .hc-ico-play { display: block; }
+  .hc-play[aria-pressed="true"] .hc-ico-pause { display: none; }
+  .hc-dot { width: 24px; height: 34px; }
+  .hc-dot::before { width: 7px; height: 7px; }
+  .hc-dot[aria-current="true"]::before { width: 22px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hc-slide, .hc-slide.is-on, .hero-media.hero-car img { transition: none; transform: none; }
+}
