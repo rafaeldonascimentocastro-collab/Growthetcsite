@@ -116,7 +116,7 @@ h3 { font-size: 1.1875rem; font-weight: 500; letter-spacing: -.01em; line-height
 .nav .nav-cta { display: inline-flex; order: 1; margin-left: auto; min-height: 40px; padding: 0 14px; font-size: .8125rem; white-space: nowrap; }
 .site-header .brand img { width: 150px; }
 .nav a:not(.btn):hover { color: #fff; background: rgba(255, 255, 255, .05); }
-.nav a:not(.btn)[aria-current="page"] { color: #fff; border-color: var(--orange); background: rgba(223, 93, 43, .12); }
+.nav a:not(.btn)[aria-current] { color: #fff; border-color: var(--orange); background: rgba(223, 93, 43, .12); }
 /* destaque sutil: Cursos e Mentoria com um ponto laranja */
 .nav a.nav-hl::before { content: ""; width: 6px; height: 6px; margin-right: 6px; border-radius: 50%; background: var(--orange); flex: none; }
 .nav .nav-wa { display: none; }
@@ -130,8 +130,8 @@ html { scroll-padding-top: 160px; }
   .nav .nav-cta { display: inline-flex; order: 1; margin-left: auto; white-space: nowrap; }
   .nav a:not(.btn) { flex: none; font-size: .9375rem; padding: 10px 9px; min-height: 44px; margin: -6px 0 2px; border: 0; background: none; border-radius: 8px; }
   .nav a:not(.btn):nth-child(3n+2), .nav a:not(.btn):nth-child(3n+3) { margin-left: 0; }
-  .nav a:not(.btn)[aria-current="page"] { background: none; }
-  .nav a:not(.btn)[aria-current="page"]::after { content: ""; position: absolute; left: 9px; right: 9px; bottom: 4px; height: 2px; background: var(--orange); }
+  .nav a:not(.btn)[aria-current] { background: none; }
+  .nav a:not(.btn)[aria-current]::after { content: ""; position: absolute; left: 9px; right: 9px; bottom: 4px; height: 2px; background: var(--orange); }
   .nav-long { display: inline; }
   .nav .nav-cta { min-height: 44px; padding: 0 18px; font-size: .875rem; }
   .site-header .brand img { width: 176px; }
@@ -149,7 +149,7 @@ html { scroll-padding-top: 160px; }
   .nav a:not(.btn) { order: 0; padding: 12px 10px; margin: 0; }
   .nav a:not(.btn):first-child { margin-left: 0; }
   .nav .nav-cta { order: 0; }
-  .nav a:not(.btn)[aria-current="page"]::after { bottom: 4px; }
+  .nav a:not(.btn)[aria-current]::after { bottom: 4px; }
   .nav .nav-cta { margin: 0 0 0 12px; }
   html { scroll-padding-top: 84px; }
 }

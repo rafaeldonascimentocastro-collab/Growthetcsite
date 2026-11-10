@@ -378,4 +378,14 @@
       else track('generate_lead', { form: lead.tipo || tp, lead_type: tp, desafio: lead.desafio || '', origem: originText(' · ') || 'direto' });
     }
   }
+  /* ---------- "Voltar ao site" (pré-diagnóstico): retorna à página de origem, se veio do próprio site ---------- */
+  var back = d.querySelector('.lp-hd-link--back');
+  if (back) {
+    try {
+      var ref = d.referrer ? new URL(d.referrer) : null;
+      if (ref && ref.origin === location.origin && ref.pathname !== location.pathname && !/obrigado/.test(ref.pathname)) {
+        back.setAttribute('href', ref.pathname + ref.search);
+      }
+    } catch (e) {}
+  }
 })();
